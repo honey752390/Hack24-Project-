@@ -1,45 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Assignment</title>
-    <link rel="stylesheet" href="css/style.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Upload Assignment - Student Project Hub</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css for upload page -->
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f4f4;
+      }
+
+      .header {
+         background-color: #ffffff;
+         color: #fff;
+         padding: 10px 0;
+      }
+
+      .header .flex {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0 20px;
+      }
+
+      .header .logo {
+         font-size: 24px;
+         font-weight: bold;
+      }
+
+      .header .icons {
+         display: flex;
+         gap: 10px;
+      }
+
+      .upload-section {
+         padding: 20px;
+         text-align: center;
+         background-color: #fff;
+      }
+
+      .upload-section h1.heading {
+         color: #333;
+         margin-bottom: 20px;
+      }
+
+      .upload-form {
+         max-width: 600px;
+         margin: 0 auto;
+         background: #f9f9f9;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .upload-form .inputBox {
+         margin-bottom: 15px;
+         text-align: left;
+      }
+
+      .upload-form .inputBox input[type="text"],
+      .upload-form .inputBox input[type="file"] {
+         width: 100%;
+         padding: 10px;
+         border-radius: 5px;
+         border: 1px solid #ccc;
+         font-size: 16px;
+      }
+
+      .upload-form .btn {
+         background-color: #8e44ad;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 5px;
+         font-size: 16px;
+         cursor: pointer;
+      }
+
+      .upload-form .btn:hover {
+         background-color: #0056b3;
+      }
+
+      .footer {
+         background-color: #ffffff;
+         color: #000000;
+         text-align: center;
+         padding: 10px 0;
+         position: fixed;
+         width: 100%;
+         bottom: 0;
+      }
+   </style>
 </head>
 <body>
 
 <header class="header">
-    <section class="flex">
-        <a href="home.html" class="logo">DocPort</a>
-    </section>
-</header>
+   <section class="flex">
+      <a href="home.html" class="logo">DocPort <i class="fa-solid fa-file"></i></a>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+   </section>
+</header>   
 
-<main>
-    <section class="upload-section">
-        <h1>Submit Your Assignment</h1>
-        <form action="submit_assignment.php" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="student_name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="student_email" required>
-            </div>
-            <div class="form-group">
-                <label for="assignment">Upload Assignment:</label>
-                <input type="file" id="assignment" name="assignment_file" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn">Submit</button>
-            </div>
-        </form>
-    </section>
-</main>
+<div class="upload-section">
+   <h1 class="heading">Submit Your Assignment</h1>
+   <form action="submit_assignment.php" method="POST" enctype="multipart/form-data" class="upload-form">
+      <div class="inputBox">
+         <input type="text" name="student_name" required placeholder="Your Name">
+      </div>
+      <div class="inputBox">
+         <input type="text" name="project_title" required placeholder="Project Title">
+      </div>
+      <div class="inputBox">
+         <input type="file" name="assignment_file" required>
+      </div>
+      <input type="submit" value="Upload Assignment" class="btn">
+   </form>
+</div>
 
-<footer>
-    <p>&copy; 2024 DocPort. All rights reserved.</p>
+<footer class="footer">
+   &copy; copyright @ 2024 by <span>The Tech Geeks</span> | all rights reserved!
 </footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
 
 </body>
 </html>
